@@ -1,6 +1,6 @@
 # voting-app
 
-[FreeCodeCamp Exercise]: https://www.freecodecamp.com/challenges/build-a-voting-app
+[FreeCodeCamp Exercise Link](https://www.freecodecamp.com/challenges/build-a-voting-app)
 
 ### Constraints
 
