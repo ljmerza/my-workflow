@@ -1,0 +1,25 @@
+{
+  "name": "voting-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljmerza/voting-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ljmerza/voting-app/issues"
+  },
+  "homepage": "https://github.com/ljmerza/voting-app#readme",
+  "dependencies": {
+    "everyauth": "^0.4.9",
+    "express": "^4.13.4",
+    "pg-promise": "^3.5.3"
+  }
+}
