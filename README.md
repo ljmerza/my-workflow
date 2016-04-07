@@ -1,7 +1,7 @@
 # My Gulp Workflow
 
 ### Plugins used:
-s
+
 * browser-sync
 * gulp-autoprefixer
 * gulp-clean-css
