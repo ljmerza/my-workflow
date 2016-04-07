@@ -70,6 +70,7 @@ gulp.task('browser-sync', ['nodemon'], () => {
         port: 5000,
         notify: true
 	})
+	gulp.src(".").pipe(notify("Browser synced!"))
 })
 
 // ===================================
@@ -80,16 +81,16 @@ gulp.task('nodemon', () => {
     	script: 'app.js',
     	ignore: ['gulpfile.js','node_modules/']
   	})
-  	.on('restart', function () {
-    	setTimeout(function () {
+  	.on('restart', () => {
+    	setTimeout(() =>  {
       		reload({ stream: false })
     	}, 1000)
     	gulp.src(".").pipe(notify("Node Server Restarted!"))
   	})
-  	.on('crash', function(){
+  	.on('crash', () => {
   		gulp.src(".").pipe(notify("Node Server Crash!"))
   	})
-  	.on('start', function(){
+  	.on('start', () => {
   		gulp.src(".").pipe(notify("Node Server Started!"))
   	})
 })
@@ -114,7 +115,7 @@ gulp.task('image', () => {
 // Watch tasks
 // ===================================
 gulp.task('watch', () => {
-    gulp.watch('./public/js/**/*.js', ['javascript'])
+    gulp.watch('./**/*.js', ['javascript'])
     gulp.watch('./public/css/**/*.sass', ['sass'])
     gulp.watch('./public/**/*.html', ['html'])
     gulp.watch('./views/**/*.jade', ['jade'])
