@@ -6,7 +6,6 @@ var gulp            = require('gulp'),                      // use gulp
     plumber         = require('gulp-plumber'),              // prevent pipe breaking in gulp
     autoprefixer    = require('gulp-autoprefixer'),         // autoprefixes css
     browserSync     = require('browser-sync'),              // browser-sync ftw
-    nodemon         = require('gulp-nodemon')
     reload          = browserSync.reload,                   // variable to reload the browser
     uglify          = require('gulp-uglify'),               // uglifies Javascript
     minify          = require('gulp-clean-css'),            // minifies CSS
