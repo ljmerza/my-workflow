@@ -1,61 +1,51 @@
-// ===================================
-// Required node modules
-// ===================================
-var gulp            = require('gulp'),                      // use gulp
-    sass            = require('gulp-sass'),                 // compiles sass
-    plumber         = require('gulp-plumber'),              // prevent pipe breaking in gulp
-    autoprefixer    = require('gulp-autoprefixer'),         // autoprefixes css
-    browserSync     = require('browser-sync'),              // browser-sync ftw
-    reload          = browserSync.reload,                   // variable to reload the browser
-    uglify          = require('gulp-uglify'),               // uglifies Javascript
-    minify          = require('gulp-clean-css'),            // minifies CSS
-    concat          = require('gulp-concat')                // concatenates files
-    csso            = require('gulp-csso'),                 // css minifer 
-    jshint          = require('gulp-jshint')                // js linter
-    notify          = require("gulp-notify")
+var gulp = require('gulp'),                     
+    sass = require('gulp-sass'),                
+    plumber = require('gulp-plumber'),             
+    autoprefixer = require('gulp-autoprefixer'),         
+    browserSync = require('browser-sync'),             
+    reload = browserSync.reload,                   
+    uglify = require('gulp-uglify'),    
+    minify = require('gulp-clean-css'),           
+    concat = require('gulp-concat'),             
+    csso = require('gulp-csso'),           
+    jshint = require('gulp-jshint'),
+    notify = require("gulp-notify")
 
-// ===================================
-// Javascript task:
-// ===================================
+
+// Javascript tasks
 gulp.task('javascript', () => {
-    gulp.src('./publis/js/*.js', {base: './'})           // Source: all .js files
-    .pipe(plumber())                                        // Prevent pipe breaking if errors
-    .pipe(concat('script.js'))                              // Concatenate into one file
-    //.pipe(uglify())                                       // Uglify the file (Comment this while in development)
-    .pipe(jshint())                     
+    gulp.src('./public/js/*.js', {base: './'})
+    .pipe(plumber())
+    .pipe(concat('script.js'))
+    //.pipe(uglify())
+    .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(gulp.dest('./'))                                  // Destination folder
-    .pipe(reload({stream:true}))                            // Reload the browser
-});
+    .pipe(gulp.dest('./'))
+    .pipe(reload({stream:true}))  
+})
 
-// ===================================
-// Sass task
-// ===================================
+// Sass tasks
 gulp.task('sass', () => {
-    gulp.src('./public/css/*.sass', {base: './'})        // Source: sass file that imports all others
-    .pipe(plumber())                                        // Prevent pipe breaking if errors
-    .pipe(sass())                                           // Compiles sass
-    .pipe(autoprefixer('last 3 versions'))                  // Adds vendor prefixes to css
-    //.pipe(csso())                                         // Minify the css (Comment this while in development)
-    .pipe(gulp.dest('./'))                                  // Destination folder
-    .pipe(reload({stream:true}))                            // Reload the browser
-});
+    gulp.src('./public/css/*.scss', {base: './'})
+    .pipe(plumber())
+    .pipe(sass())                 
+    .pipe(autoprefixer('last 3 versions'))
+    //.pipe(csso())
+    .pipe(gulp.dest('./'))
+    .pipe(reload({stream:true}))
+})
 
-// ===================================
 // HTML/JADE tasks
-// ===================================
 gulp.task('html', () => {
     gulp.src('./public/*.html')
-    .pipe(reload({stream:true}))                            // Reload the browser
+    .pipe(reload({stream:true}))                           
 })
 gulp.task('jade', () => {
     gulp.src('./views/*.jade')
-    .pipe(reload({stream:true}))                            // Reload the browser
+    .pipe(reload({stream:true}))                    
 })
 
-// ===================================
 // Browser-sync task
-// ===================================
 gulp.task('browser-sync', ['nodemon'], () => {
     browserSync({
         proxy: "localhost:3000",
@@ -65,13 +55,11 @@ gulp.task('browser-sync', ['nodemon'], () => {
     gulp.src(".").pipe(notify("Browser synced!"))
 })
 
-// ===================================
 // Node-sync task
-// ===================================
 gulp.task('nodemon', () => {
     nodemon({
         script: 'app.js',
-        ignore: ['gulpfile.js','node_modules/']
+        ignore: ['./gulpfile.js','./node_modules','./db']
     })
     .on('restart', () => {
         setTimeout(() =>  {
@@ -87,18 +75,13 @@ gulp.task('nodemon', () => {
     })
 })
 
-// ===================================
 // Watch tasks
-// ===================================
 gulp.task('watch', () => {
     gulp.watch('./public/*.html', ['html'])
     gulp.watch('./public/js/*.js', ['javascript'])
-    gulp.watch('./public/css/*.sass', ['sass'])
+    gulp.watch('./public/css/*.scss', ['sass'])
     gulp.watch('./views/*.jade', ['jade'])
 })
 
-// ===================================
 // Default task
-// ===================================
-
 gulp.task('default', ['browser-sync', 'watch'])
