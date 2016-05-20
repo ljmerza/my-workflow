@@ -1,48 +1,65 @@
-var gulp = require('gulp'),                     
-    sass = require('gulp-sass'),                
-    plumber = require('gulp-plumber'),             
-    autoprefixer = require('gulp-autoprefixer'),         
-    browserSync = require('browser-sync'),             
-    reload = browserSync.reload,                   
-    uglify = require('gulp-uglify'),    
-    minify = require('gulp-clean-css'),           
-    concat = require('gulp-concat'),             
-    csso = require('gulp-csso'),           
-    jshint = require('gulp-jshint'),
-    notify = require("gulp-notify")
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    nodemon = require('gulp-nodemon'),
+    sourcemaps = require('gulp-sourcemaps'),
+    cssnano = require('gulp-cssnano'),
+    babel = require('gulp-babel')
 
-
+/*
 // Javascript tasks
 gulp.task('javascript', () => {
     gulp.src('./public/js/*.js', {base: './'})
-    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+        presets: ['es2015'],
+        plugins: ['transform-runtime']
+    }))
+    .pipe(uglify())
     .pipe(concat('script.js'))
-    //.pipe(uglify())
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(gulp.dest('./'))
-    .pipe(reload({stream:true}))  
-})
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./public/'))
+    .pipe(browserSync.reload({stream:true}))
+})*/
 
 // Sass tasks
 gulp.task('sass', () => {
-    gulp.src('./public/css/*.scss', {base: './'})
-    .pipe(plumber())
-    .pipe(sass())                 
-    .pipe(autoprefixer('last 3 versions'))
-    //.pipe(csso())
-    .pipe(gulp.dest('./'))
-    .pipe(reload({stream:true}))
+    gulp.src('./public/sass/*.sass')
+    //.pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(concat('style.css'))
+    //.pipe(autoprefixer('last 2 versions'))
+    //.pipe(cssnano())
+    //.pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./public/'))
+    .pipe(browserSync.reload({stream:true}))
 })
 
-// HTML/JADE tasks
+// HTML tasks
 gulp.task('html', () => {
     gulp.src('./public/*.html')
-    .pipe(reload({stream:true}))                           
+    .pipe(browserSync.reload({stream:true}))                           
 })
 gulp.task('jade', () => {
     gulp.src('./views/*.jade')
     .pipe(reload({stream:true}))                    
+})
+
+
+// Node-sync task
+gulp.task('nodemon', () => {
+    nodemon({
+        script: 'dev-server.js',
+        ignore: ['./gulpfile.js','./node_modules','./db']
+    })
+    .on('restart', () => {
+        setTimeout(() =>  {
+            browserSync.reload({ stream: false })
+        }, 1000)
+    })
 })
 
 // Browser-sync task
@@ -52,34 +69,13 @@ gulp.task('browser-sync', ['nodemon'], () => {
         port: 5000,
         notify: true
     })
-    gulp.src(".").pipe(notify("Browser synced!"))
-})
-
-// Node-sync task
-gulp.task('nodemon', () => {
-    nodemon({
-        script: 'app.js',
-        ignore: ['./gulpfile.js','./node_modules','./db']
-    })
-    .on('restart', () => {
-        setTimeout(() =>  {
-            reload({ stream: false })
-        }, 1000)
-        gulp.src(".").pipe(notify("Node Server Restarted!"))
-    })
-    .on('crash', () => {
-        gulp.src(".").pipe(notify("Node Server Crash!"))
-    })
-    .on('start', () => {
-        gulp.src(".").pipe(notify("Node Server Started!"))
-    })
 })
 
 // Watch tasks
 gulp.task('watch', () => {
     gulp.watch('./public/*.html', ['html'])
-    gulp.watch('./public/js/*.js', ['javascript'])
-    gulp.watch('./public/css/*.scss', ['sass'])
+    //gulp.watch('./public/js/*.js', ['javascript'])
+    gulp.watch('./public/sass/*.sass', ['sass'])
     gulp.watch('./views/*.jade', ['jade'])
 })
 
