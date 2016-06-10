@@ -1,34 +1,408 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Freelance Web Development by Leonardo Merza. Based in Columbia, SC. Offering fullstack web and mobile application development and design.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+  <title>Leonardo Merza - Web Developer</title>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+<body>
+
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper z-depth-3">
+        <a href="#!" class="brand-logo">Leonardo Merza</a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+
+        <ul class="right hide-on-med-and-down navbar-main">
+          <li class="active homemenu"><a href="#home">Home</a></li>
+          <li class='aboutmenu'><a href="#about">About</a></li>
+          <li class='designmenu'><a href="#design">Process</a></li>
+          <!-- <li class='workmenu'><a href="#work">Work</a></li> -->
+          <li class='contactmenu'><a href="#contact">&nbsp;Contact</a></li>
+          <li class='blogmenu'><a href="https://blog.lmerza.com">&nbsp;Blog</a></li>
+          <!-- <li class='blogmenu'><a class="dropdown-button" href="http://blog.lmerza.com" data-activates="dropdown1"> Blog<i class="material-icons">arrow_drop_down</i></a></li> -->
+        </ul>
+
+        <ul class="side-nav" id="nav-mobile">
+          <li class="active" class='homemenu'><a href="#home" class='active'>Home</a></li>
+          <li class='aboutmenu'><a href="#about">About</a></li>
+          <li class='designmenu'><a href="#design">Process</a></li>
+          <li class='workmenu'><a href="#work">Work</a></li>
+          <li class='contactmenu'><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div> 
+
+  <!--main container-->
+  <div class='page-section' id='home'>
+    <section class="special" data-scrollax-parent="true">
+      <div class="cover" data-scrollax="properties: { translateY: '30%' }"><img src="img/header.jpg" /></div>
+      <div class="content">
+        <div class="text centralize">
+          <div data-scrollax="properties: { 'translateY': '200%', 'opacity': 2 }">
+            <header class="major">
+              <h2>Full Stack Web Development</h2>
+            </header>
+            <p>From graphical interfaces for desktop and mobile applications to scalable backend databases and APIs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+
+
+  <div class="container">
+    <!--about-->
+  <div id="about" class='page-section'>
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <h1 class="center-align">About Me</h1>
+        <div class="col s6 offset-s3"><div class="divider"></div></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m10 offset-m1">
+        <h3>Who I Am</h3>
+        <p class='flow-text'>My name is Leonardo Merza and I am a electrical engineer turned software developer.  I began my programming skills as a network administrator designing backend software for database deployment, backup integrity, and security management. I continued my education in various fields of web development and heavily rely on Javascript and Python. Today, my skillset widely ranges from web and mobile applications, Wordpress themes, database integration, and API design.
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <h3>My Services</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <img src="img/header.jpg" alt="" class="circle">
+            <span class="title">Static and Wordpress Design</span>
+            <p>Using the latest technologies in HTML5 CSS3 and ECMAScript6 to design responsive compatible websites</p>
+            <a href="#!" class="secondary-content"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col s11 m9 offset-m1">
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <img src="img/header.jpg" alt="" class="circle">
+            <span class="title">Single Page Applications</span>
+            <p>Integrate 3rd party APIs or custom REST compatible APIs with RDBMS and NoSQL databases</p>
+            <a href="#!" class="secondary-content"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s10 m8 offset-m1">
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <img src="img/header.jpg" alt="" class="circle">
+            <span class="title">Android and iOS Hybrid Applications</span>
+            <p>Cordova framework for an all-in-one solution for your mobile platform</p>
+            <a href="#!" class="secondary-content"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s9 m7 offset-m1">
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <img src="img/header.jpg" alt="" class="circle">
+            <span class="title">Content Management Systems</span>
+            <p>Standalone or integrated Wordpress CMS so you can easily add new content later on</p>
+            <a href="#!" class="secondary-content"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><!--end of about-->
     
-        <p>Hello world!</p>
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to site ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--design process-->
+     <div class='page-section' id='design'>
+      <div class="row">
+        <div class="col s12 m6 offset-m3">
+          <h1 class="center-align">Design Process</h1>
+          <div class="col s6 offset-s3"><div class="divider"></div></div>
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="col s10 offset-s1 m4 offset-m4 center-align">
+          Each project follows a strict design process of information gathering, prototyping, testing, and deployment into a production environment all while keeping you up to date.
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card transition z-depth-2">
+            <h2 class="transition">Design and Plan</h2>
+            <p>This involves collecting data about your business model, your competitors, and what direction you want your business to grow. Mock up designs and planning strategy to ensure smooth development.</p>
+            <div class="card_circle card_circle_plan transition"></div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card transition z-depth-2">
+            <h2 class="transition">Develop and Test</h2>
+            <p>Wireframes, color themes, typography, and material design for front end construction. Speed, scalability, and data integrity for the back end. Thorough testing to keep your mind at ease.</p>
+            <div class="card_circle card_circle_design transition"></div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card transition z-depth-2">
+            <h2 class="transition">Deploy and Maintain</h2>
+            <p>From staging to deployment, allow your product to be seamlessly integrated into your business. Tech support for those last minute changes to guarantee product satisfation.</p>
+            <div class="card_circle card_circle_deploy transition"></div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          
+        </div>
+      </div> <!--end of design process-->
+    </div>
+  
+
+
+
+</div>
+
+
+    <!--previous work-->
+   <!--  <div class="parallax-container parallax-height page-section" id='work'>
+      <div class="container">
+        <div class="row"> 
+          <div class="col s12 m6 offset-m3">
+            <h1 class="center-align">Previous Work</h1>
+            <div class="col s6 offset-s3"><div class="divider"></div></div>
+          </div>
+        </div>
+        <div class="row">
+          <h2 class="col s8 offset-s2 m4 offset-m4 center-align">
+            Click on any of the images below to see the design process that went into previous projects.
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://placehold.it/300x300">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-action">
+              test
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              </div>
+            </div>
+          </div>
+          <div class="col m4 s6">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://placehold.it/300x300">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-action">
+                <p>Here is some more information about this product that is only revealed once clicked on.<
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              </div>
+            </div>
+          </div>
+          <div class="col m4 s6">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://placehold.it/300x300">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-action">
+                <p>Here is some more information about this product that is only revealed once clicked on.<
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              </div>
+            </div>
+          </div>
+          <div class="col m4 s6">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://placehold.it/300x300">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-action">
+                <p>Here is some more information about this product that is only revealed once clicked on.<
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              </div>
+            </div>
+          </div>
+          <div class="col m4 s6">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://placehold.it/300x300">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-action">
+                <p>Here is some more information about this product that is only revealed once clicked on.<
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              </div>
+            </div>
+          </div>
+          <div class="col m4 s6">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="https://placehold.it/300x300">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-action">
+                <p>Here is some more information about this product that is only revealed once clicked on.<
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="parallax-work"><img src="https://placehold.it/1200x8000"></div>
+    </div> -->
+    
+    
+
+
+
+
+
+
+
+
+<div class="container page-section">
+
+    <!--contact row-->
+    <div class="row" id='contact'> 
+      <div class="col s12 m6 offset-m3">
+        <h1 class="center-align">Contact Me</h1>
+        <div class="col s6 offset-s3"><div class="divider"></div></div>
+      </div>
+    </div>
+    <div class="row">
+      <h2 class="col s8 offset-s2 m4 offset-m4 center-align">
+        
+      </h2>
+    </div>
+
+        <div class="row row-form">
+          <div class="col s12 m8 offset-m2">
+            <form>
+              <div class="row">
+                <div class="col s12">
+                  <label for="Name" class='sr-only'>First Name</label>
+                  <input id="Name" type="text" placeholder='Name'>
+                  <label for="Email" class='sr-only'>Email</label>
+                  <input type="Email" id="Email" placeholder="Email" required />
+                  <label for="Message" class='sr-only'>Message</label>
+                  <textarea rows="1" id="Message" placeholder="Message" class="materialize-textarea" required></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6 ">
+                  <div class="g-recaptcha" data-sitekey="6LdFMyITAAAAALFhI3rZKCPHa_CDIVrG1KdBas0z"></div>
+                </div>
+                <div class="col s12 m3 offset-m3">
+                  <button type="submit" class="btn btn-large waves-effect waves-light pull-right transparent col s12">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div> 
+        </div>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+      <a class="btn-floating btn-large blue darken-4 z-depth-3">
+      <i class="material-icons">keyboard_arrow_up</i></a>
+    <ul>
+      <li><a href='https://www.facebook.com/ljmerza' class="btn-floating blue darken-4"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li><a href='https://www.linkedin.com/in/lmerza' class="btn-floating blue"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+      <li><a href='https://github.com/ljmerza' class="btn-floating green"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+     
+    </ul>
+  </div>
+      
+</div> <!--end of main container-->
+
+
+
+
+
+
+
+
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        © 2014 Copyright Text
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://iprodev.github.io/Scrollax.js/lib/scrollax.min.js"></script>
+</body>
 </html>
